@@ -12,15 +12,15 @@ const Modal = ({ opened, setModalAction }) => {
     }, [opened]);
 
     const refModalWrapper = useRef(null);
-
-    useOnClickOutside(refModalWrapper, () => setModalAction(false));
+    const modalClose = () => setModalAction(false);
+    useOnClickOutside(refModalWrapper, modalClose);
 
     return (
         <ModalOverlay open={opened}>
             <ModalWrapper ref={refModalWrapper} open={opened}>
-                <ModalHeader modalClose={() => setModalAction(false)} />
+                <ModalHeader modalClose={modalClose} />
                 <ModalContent />
-                <ModalFooter modalAction={() => setModalAction(false)} />
+                <ModalFooter modalAction={modalClose} />
             </ModalWrapper>
         </ModalOverlay>
     );
