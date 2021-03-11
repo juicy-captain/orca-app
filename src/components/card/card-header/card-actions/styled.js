@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 export const CardActionsSC = styled.div`
     display: none;
     position: absolute;
-    padding: 1em 8px 8px;
+    padding: 16px 8px 8px;
     background: #ffffff;
     width: 76px;
     min-height: 76px;

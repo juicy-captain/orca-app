@@ -10,8 +10,8 @@ export const InputContainerRow = styled.div`
                 flex-direction: row;
                 & ${InputWrapper} {
                     &:not(:last-child) {
-                        margin-right: 1em;
-                        margin-bottom: 0.5em;
+                        margin-right: 16px;
+                        margin-bottom: 8px;
                     }
                 }
             `) ||
@@ -20,7 +20,7 @@ export const InputContainerRow = styled.div`
                 flex-direction: column;
                 & ${InputWrapper} {
                     &:not(:last-child) {
-                        margin-bottom: 0.5em;
+                        margin-bottom: 8px;
                     }
                 }
             `)}
@@ -60,8 +60,8 @@ export const Button = styled.button`
     border-radius: 2px;
     padding: 6px;
     border: 0;
-    font-size: 0.625em;
-    line-height: 0.75em;
+    font-size: 10px;
+    line-height: 12px;
     text-transform: uppercase;
     min-width: 100px;
     cursor: pointer;

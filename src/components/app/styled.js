@@ -10,7 +10,7 @@ export const ContentWrapper = styled.div`
 `;
 
 export const Logo = styled.svg`
-    width: 5.9375em;
-    height: 2.5em;
-    margin-bottom: 1.875em;
+    width: 95px;
+    height: 40px;
+    margin-bottom: 30px;
 `;
