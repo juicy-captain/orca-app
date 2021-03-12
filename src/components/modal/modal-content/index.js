@@ -1,9 +1,9 @@
 import { ModalContentSC, ModalText } from "./styled";
 
-import CheckBox from "../../checkbox";
+import { CheckBox } from "../../checkbox";
 import { InputContainerRow } from "../../../utils/helpers";
 
-const ModalContent = () => {
+export const ModalContent = () => {
     const checkboxGroupOne = [
         {
             id: "list1",
@@ -84,5 +84,3 @@ const ModalContent = () => {
         </ModalContentSC>
     );
 };
-
-export default ModalContent;

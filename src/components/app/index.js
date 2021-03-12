@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { ContentWrapper, Logo } from "./styled";
-import Card from "../card";
-import Modal from "../modal";
+import { Card } from "../card";
+import { Modal } from "../modal";
 import svg from "../../assets/img/sprite.svg";
-function App() {
+export const App = () => {
     const [isModalOpen, setModalOpen] = useState(false);
 
     return (
@@ -12,11 +12,12 @@ function App() {
                 <Logo>
                     <use xlinkHref={svg + "#logo"}></use>
                 </Logo>
-                <Card setModalOpen={setModalOpen} />
-                <Modal opened={isModalOpen} setModalAction={setModalOpen} />
+                <Card setModalOpen={() => setModalOpen(!isModalOpen)} />
+                <Modal
+                    opened={isModalOpen}
+                    setModalAction={() => setModalOpen(!isModalOpen)}
+                />
             </div>
         </ContentWrapper>
     );
-}
-
-export default App;
+};

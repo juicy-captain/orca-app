@@ -1,9 +1,9 @@
+import { CardHeader } from "./card-header";
+import { CardContent } from "./card-content";
+import PropTypes from "prop-types";
 import { CardWrapper, OpenModalButton } from "./styled";
 
-import CardHeader from "./card-header";
-import CardContent from "./card-content";
-
-const Card = ({ setModalOpen }) => {
+export const Card = ({ setModalOpen }) => {
     return (
         <CardWrapper>
             <CardHeader />
@@ -15,4 +15,6 @@ const Card = ({ setModalOpen }) => {
     );
 };
 
-export default Card;
+Card.propTypes = {
+    setModalOpen: PropTypes.func,
+};

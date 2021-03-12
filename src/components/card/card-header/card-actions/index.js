@@ -1,7 +1,8 @@
 import { CardActionsSC, CardActionsClose, CardAction } from "./styled";
+import PropTypes from "prop-types";
 import svg from "../../../../assets/img/sprite.svg";
 
-const CardActions = ({ isOptionsOpened, optionToggle }) => {
+export const CardActions = ({ isOptionsOpened, optionToggle }) => {
     return (
         <CardActionsSC opened={isOptionsOpened}>
             <CardActionsClose width="11" height="11" onClick={optionToggle}>
@@ -28,4 +29,8 @@ const CardActions = ({ isOptionsOpened, optionToggle }) => {
         </CardActionsSC>
     );
 };
-export default CardActions;
+
+CardActions.propTypes = {
+    isOptionsOpened: PropTypes.bool,
+    optionToggle: PropTypes.func,
+};

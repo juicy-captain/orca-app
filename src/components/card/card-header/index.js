@@ -5,10 +5,10 @@ import {
     CardHeaderTitle,
     CardHeaderMore,
 } from "./styled";
-import CardActions from "./card-actions";
+import { CardActions } from "./card-actions";
 import svg from "../../../assets/img/sprite.svg";
 
-const CardHeader = () => {
+export const CardHeader = () => {
     const [isOptionsOpened, setOptionsOpened] = useState(false);
     return (
         <CardHeaderSC>
@@ -32,5 +32,3 @@ const CardHeader = () => {
         </CardHeaderSC>
     );
 };
-
-export default CardHeader;

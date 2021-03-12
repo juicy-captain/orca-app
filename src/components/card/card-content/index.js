@@ -8,7 +8,7 @@ import {
     CardPropertyMultiRowContent,
 } from "./styled";
 
-const CardContent = () => {
+export const CardContent = () => {
     return (
         <CardContentSC>
             <CardRow>
@@ -42,5 +42,3 @@ const CardContent = () => {
         </CardContentSC>
     );
 };
-
-export default CardContent;

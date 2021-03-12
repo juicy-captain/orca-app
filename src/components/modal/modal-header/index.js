@@ -1,6 +1,8 @@
 import { ModalHeaderSC, ModalTitle, ModalClose } from "./styled";
 import svg from "../../../assets/img/sprite.svg";
-const ModalHeader = ({ modalClose }) => {
+import PropTypes from "prop-types";
+
+export const ModalHeader = ({ modalClose }) => {
     return (
         <ModalHeaderSC>
             <ModalTitle>Lorem ipsum dolor sit amet</ModalTitle>
@@ -11,4 +13,6 @@ const ModalHeader = ({ modalClose }) => {
     );
 };
 
-export default ModalHeader;
+ModalClose.propTypes = {
+    modalClose: PropTypes.func,
+};

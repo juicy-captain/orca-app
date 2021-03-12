@@ -1,7 +1,8 @@
 import { ModalFooterSC } from "./styled";
 import { Button } from "../../../utils/helpers";
+import PropTypes from "prop-types";
 
-const ModalFooter = ({ modalAction }) => {
+export const ModalFooter = ({ modalAction }) => {
     return (
         <ModalFooterSC>
             <Button buttonType="secondary" onClick={modalAction}>
@@ -14,4 +15,6 @@ const ModalFooter = ({ modalAction }) => {
     );
 };
 
-export default ModalFooter;
+ModalFooter.propTypes = {
+    modalAction: PropTypes.func,
+};

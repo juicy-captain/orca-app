@@ -1,6 +1,7 @@
 import { Label, InputCheckBox, InputWrapper } from "./styled";
+import PropTypes from "prop-types";
 
-const CheckBox = ({ connectId, children }) => {
+export const CheckBox = ({ connectId, children }) => {
     return (
         <InputWrapper>
             <InputCheckBox id={connectId} />
@@ -9,4 +10,7 @@ const CheckBox = ({ connectId, children }) => {
     );
 };
 
-export default CheckBox;
+CheckBox.propTypes = {
+    connectId: PropTypes.string,
+    children: PropTypes.node,
+};

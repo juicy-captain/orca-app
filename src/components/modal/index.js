@@ -1,29 +1,42 @@
-import { ModalOverlay, ModalWrapper } from "./styled";
-
 import { useEffect, useRef } from "react";
-import ModalHeader from "./modal-header";
-import ModalContent from "./modal-content";
-import ModalFooter from "./modal-footer";
+import { ModalHeader } from "./modal-header";
+import { ModalContent } from "./modal-content";
+import { ModalFooter } from "./modal-footer";
 import { useOnClickOutside } from "../../hooks/use-on-click-outside";
+import PropTypes from "prop-types";
+import { CSSTransition } from "react-transition-group";
+import { ModalOverlay, ModalWrapper, ModalContainer } from "./styled";
 
-const Modal = ({ opened, setModalAction }) => {
+export const Modal = ({ opened, setModalAction }) => {
     useEffect(() => {
         document.body.style.overflow = opened ? "hidden" : "";
     }, [opened]);
 
     const refModalWrapper = useRef(null);
-    const modalClose = () => setModalAction(false);
-    useOnClickOutside(refModalWrapper, modalClose);
+    useOnClickOutside(refModalWrapper, setModalAction);
 
     return (
-        <ModalOverlay open={opened}>
-            <ModalWrapper ref={refModalWrapper} open={opened}>
-                <ModalHeader modalClose={modalClose} />
-                <ModalContent />
-                <ModalFooter modalAction={modalClose} />
-            </ModalWrapper>
-        </ModalOverlay>
+        <ModalContainer>
+            <CSSTransition
+                in={opened}
+                timeout={200}
+                classNames="modal"
+                unmountOnExit
+                nodeRef={refModalWrapper}
+            >
+                <ModalOverlay>
+                    <ModalWrapper ref={refModalWrapper} open={opened}>
+                        <ModalHeader modalClose={setModalAction} />
+                        <ModalContent />
+                        <ModalFooter modalAction={setModalAction} />
+                    </ModalWrapper>
+                </ModalOverlay>
+            </CSSTransition>
+        </ModalContainer>
     );
 };
 
-export default Modal;
+Modal.propTypes = {
+    opened: PropTypes.bool,
+    setModalAction: PropTypes.func,
+};
